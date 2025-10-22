@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakaria Gallouch — Marketing Strategist</title>
+    <style>
+        :root {
+            --primary: #0066FF;
+            --primary-light: #3385FF;
+            --text-primary: #0A0D14;
+            --text-secondary: #4A5568;
+            --text-tertiary: #718096;
+            --bg: #FFFFFF;
+            --bg-subtle: #F7F9FC;
+            --border: #E2E8F0;
+            --accent-green: #10B981;
+            --accent-purple: #8B5CF6;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2.5rem;
+            --spacing-xl: 4rem;
+            --spacing-2xl: 6rem;
+            --radius: 12px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', system-ui, sans-serif;
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        .eyebrow {
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: var(--spacing-sm);
+            display: inline-block;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-primary);
+        }
+        
+        p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .lead {
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-width: 65ch;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        section {
+            padding: var(--spacing-xl) 0;
+        }
+        
+        @media (min-width: 768px) {
+            section {
+                padding: var(--spacing-2xl) 0;
+            }
+        }
+        
+        /* Header */
+        header {
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid var(--border);
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-lg);
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: var(--spacing-2xl) 0;
+            position: relative;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .profile-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid var(--border);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        
+        .profile-photo:hover {
+            border-color: var(--primary);
+            transform: scale(1.05);
+            transition: all 0.2s;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-xs) var(--spacing-md);
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .stat {
+            text-align: left;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: 0.875rem 1.75rem;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-secondary {
+            background: var(--bg-subtle);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            border-color: var(--primary);
+        }
+        
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        /* Cards */
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            transition: all 0.3s;
+        }
+        
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-subtle);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.5rem;
+        }
+        
+        /* Grid */
+        .grid {
+            display: grid;
+            gap: var(--spacing-lg);
+        }
+        
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Case Study */
+        .case-study {
+            background: var(--bg-subtle);
+            border-radius: var(--radius);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .case-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            border: 1px solid var(--border);
+        }
+        
+        .case-meta {
+            flex: 1;
+        }
+        
+        .case-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid var(--border);
+        }
+        
+        .metric {
+            position: relative;
+        }
+        
+        .metric-value {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            line-height: 1;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+        
+        .metric-bar {
+            height: 4px;
+            background: var(--border);
+            border-radius: 100px;
+            margin-top: var(--spacing-xs);
+            overflow: hidden;
+        }
+        
+        .metric-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-green), var(--primary));
+            border-radius: 100px;
+            animation: fillBar 1.5s ease-out;
+        }
+        
+        @keyframes fillBar {
+            from { width: 0; }
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: var(--spacing-lg);
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: var(--spacing-lg);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px var(--border);
+        }
+        
+        /* Process */
+        .process-step {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: var(--bg-subtle);
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+        
+        .step-content h4 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .step-content p {
+            font-size: 1rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+            border-radius: var(--radius);
+            padding: var(--spacing-2xl);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            color: white;
+        }
+        
+        .cta-section p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .cta-section .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .cta-section .btn-primary:hover {
+            background: var(--bg-subtle);
+        }
+        
+        /* Footer */
+        footer {
+            padding: var(--spacing-xl) 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* List styling */
+        .feature-list {
+            list-style: none;
+            margin-top: var(--spacing-md);
+        }
+        
+        .feature-list li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-secondary);
+        }
+        
+        .feature-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        /* Skill tags */
+        .skill-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+        
+        .skill-tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 767px) {
+            .nav-links {
+                display: none;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-photo {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cta-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .skill-tag {
+                font-size: 0.8125rem;
+                padding: 0.4rem 0.75rem;
+            }
+            
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-value {
+                font-size: 2rem;
+            }
+            
+            .stat-label {
+                font-size: 0.8125rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        /* Subtle gradient background */
+        .gradient-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .gradient-bg::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.08) 0%, transparent 70%);
+            top: -300px;
+            right: -200px;
+            border-radius: 50%;
+        }
+        
+        .gradient-bg::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">ZG</a>
+            <ul class="nav-links">
+                <li><a href="#approach">Approche</a></li>
+                <li><a href="#results">Résultats</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Application Target Banner -->
+    <section style="background: linear-gradient(135deg, #f8f9fc 0%, #ffffff 100%); border-bottom: 2px solid var(--border); padding: var(--spacing-lg) 0;">
+        <div class="container">
+            <div style="display: flex; align-items: center; gap: var(--spacing-lg); flex-wrap: wrap;">
+                <!-- Placeholder for Morgan Philips logo - Replace with: <img src="morgan-philips-logo.png" alt="Morgan Philips" style="height: 40px;"> -->
+                <div style="padding: var(--spacing-sm) var(--spacing-lg); background: white; border: 2px dashed var(--border); border-radius: 8px; font-size: 0.875rem; color: var(--text-tertiary); font-weight: 600;">
+                    LOGO RECRUTEUR
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <div style="display: inline-block; padding: 0.25rem 0.75rem; background: var(--primary); color: white; border-radius: 4px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">
+                        Candidature Ciblée
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin: 0 0 0.25rem 0; line-height: 1.3;">
+                        Product Marketing & Campaign Manager
+                    </h3>
+                    <p style="margin: 0; font-size: 0.9375rem; color: var(--text-secondary);">
+                        <strong>Morgan Philips Group</strong> — Éditeur SaaS International · Data Intelligence, IA & Market Intelligence · Casablanca
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="gradient-bg"></div>
+        <div class="container hero-content animate-in">
+            <div style="display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
+                <!-- Replace this with your actual photo: <img src="your-photo.jpg" alt="Zakaria Gallouch" style="width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--border); object-fit: cover;"> -->
+                <div class="profile-photo" title="Remplacer par votre photo" style="width: 80px; height: 80px; font-size: 2rem;">ZG</div>
+                <div class="hero-badge" style="display: inline-flex;">
+                    <span class="status-dot"></span>
+                    Disponible pour nouveaux projets
+                </div>
+            </div>
+            
+            <h1 style="margin-bottom: var(--spacing-md);">
+                Je transforme les produits tech complexes<br>
+                en <span class="gradient-text">stratégies marketing data-driven</span>
+            </h1>
+            
+            <p class="lead" style="margin: 0 0 var(--spacing-lg);">
+                Marketing strategist spécialisé tech & SaaS avec 10 ans d'expérience en positioning produit, pilotage de campagnes multicanales et activation B2B. Expertise en environnements complexes (fintech, marketplace, data-driven products) avec collaboration internationale EMEA/APAC.
+            </p>
+            
+            <div style="background: var(--bg-subtle); border-left: 4px solid var(--primary); padding: var(--spacing-md); border-radius: 8px; margin-bottom: var(--spacing-lg);">
+                <p style="margin: 0; font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6;">
+                    <strong>Pourquoi cette candidature :</strong> Votre besoin de structurer le positioning produit et piloter des campagnes marketing pour des solutions Data Intelligence & IA correspond parfaitement à mon expérience : audit stratégique B2B SaaS (HPS payment tech avec stakeholder mapping complexe), exécution de campagnes multicanales data-driven (Fan4All avec optimization continue et analytics avancées), et coordination multi-équipes sur des marchés internationaux.
+                </p>
+            </div>
+            
+            <div class="cta-group">
+                <a href="https://calendly.com/gallouch-zakaria/30-min-consultation" target="_blank" class="btn btn-primary">
+                    Discutons de votre projet
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <a href="#results" class="btn btn-secondary">Voir mes résultats</a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">300K€</div>
+                    <div class="stat-label">PR Value (SportTech Marketplace)</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">+28%</div>
+                    <div class="stat-label">Conversion (SportTech Marketplace)</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">+20</div>
+                    <div class="stat-label">Industries Served</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">+50</div>
+                    <div class="stat-label">Brands & Institutions Served</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section id="approach" style="background: var(--bg-subtle);">
+        <div class="container">
+            <div class="eyebrow">Approche</div>
+            <h2>De la complexité technique<br>à l'adoption marché</h2>
+            <p class="lead" style="margin-bottom: var(--spacing-xl);">
+                Je travaille à l'intersection du produit, du marketing et de l'utilisateur. Mon rôle : créer la clarté qui manque entre votre vision technique et l'adoption marché.
+            </p>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h4>Positioning & GTM</h4>
+                    <p>Audit marché, identification des frictions, stratégie go-to-market 90 jours et message house par persona.</p>
+                    <ul class="feature-list">
+                        <li>Analyse concurrentielle</li>
+                        <li>Mapping stakeholders</li>
+                        <li>Plan de lancement</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h4>User Journey & UX</h4>
+                    <p>Cartographie du parcours réel, identification des points de friction, optimisation de l'activation.</p>
+                    <ul class="feature-list">
+                        <li>Flow UX annoté</li>
+                        <li>Micro-copy & messaging</li>
+                        <li>Signaux de confiance</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">📝</div>
+                    <h4>Content & Enablement</h4>
+                    <p>Contenu qui éduque et active. Équiper sales et support avec les bons outils et messages.</p>
+                    <ul class="feature-list">
+                        <li>Stratégie éditoriale</li>
+                        <li>Landing pages</li>
+                        <li>Talk tracks & briefs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Tools Section -->
+    <section>
+        <div class="container">
+            <div class="eyebrow">Compétences & Stack</div>
+            <h2>Autonome sur l'exécution,<br>stratégique sur la direction</h2>
+            
+            <div class="grid grid-2" style="margin-top: var(--spacing-xl);">
+                <div>
+                    <h4 style="margin-bottom: var(--spacing-md);">Core Marketing</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="skill-tag">Positioning & Messaging</span>
+                        <span class="skill-tag">Go-to-Market Strategy</span>
+                        <span class="skill-tag">Campaign Management</span>
+                        <span class="skill-tag">Content Strategy</span>
+                        <span class="skill-tag">SEO & Content Marketing</span>
+                        <span class="skill-tag">User Journey Mapping</span>
+                        <span class="skill-tag">Stakeholder Analysis</span>
+                        <span class="skill-tag">Competitive Intelligence</span>
+                        <span class="skill-tag">Brand Strategy</span>
+                        <span class="skill-tag">Crisis Communications</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="margin-bottom: var(--spacing-md);">Exécution & Tools</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="skill-tag">HubSpot (CRM Marketing)</span>
+                        <span class="skill-tag">HTML & Landing Pages</span>
+                        <span class="skill-tag">Workflow Automation</span>
+                        <span class="skill-tag">ClickUp / Project Mgmt</span>
+                        <span class="skill-tag">Google Analytics</span>
+                        <span class="skill-tag">Google Search Console</span>
+                        <span class="skill-tag">Google Keyword Planner</span>
+                        <span class="skill-tag">SEO Tools</span>
+                        <span class="skill-tag">Canva</span>
+                        <span class="skill-tag">Hootsuite</span>
+                        <span class="skill-tag">Publer</span>
+                        <span class="skill-tag">Social Listening</span>
+                        <span class="skill-tag">Email Marketing</span>
+                        <span class="skill-tag">Creator/Influencer Ops</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: var(--spacing-xl); padding: var(--spacing-lg); background: var(--bg-subtle); border-radius: var(--radius); border-left: 4px solid var(--primary);">
+                <p style="color: var(--text-secondary); margin: 0;">
+                    <strong>Parcours :</strong> 10 ans entre agence digitale (communication stratégique, PR, campagnes 360° multicanales — OOH, TV, digital, social, press) et environnements tech/marketplace. Expérience confirmée en pilotage de campagnes avec budgets, KPIs et optimisation continue. Formation marketing avec immersion produit et UX depuis 2020. Autonome sur la création et l'analyse, collaboratif sur la stratégie.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Match Section -->
+    <section style="background: var(--bg-subtle);">
+        <div class="container">
+            <div class="eyebrow">Alignement avec le Poste</div>
+            <h2>Comment mon expérience répond<br>à vos besoins spécifiques</h2>
+            
+            <div class="grid grid-2" style="gap: var(--spacing-md); margin-top: var(--spacing-xl);">
+                <div class="card">
+                    <div style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                        <div style="width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;">✓</div>
+                        <div>
+                            <h4 style="margin: 0 0 var(--spacing-xs) 0; font-size: 1rem;">Positioning Produit & Value Proposition</h4>
+                            <p style="margin: 0; font-size: 0.9375rem; color: var(--text-secondary);">Démontré chez HPS (payment tech B2B) : stakeholder mapping 5 personas, competitive analysis, messaging house multi-niveaux. Chez Fan4All : repositionnement value prop marketplace avec trust signals.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                        <div style="width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;">✓</div>
+                        <div>
+                            <h4 style="margin: 0 0 var(--spacing-xs) 0; font-size: 1rem;">Supports d'Aide à la Vente</h4>
+                            <p style="margin: 0; font-size: 0.9375rem; color: var(--text-secondary);">Création de toolkits partenaires (Fan4All : 40+ créateurs équipés), talk tracks, briefs produits, et frameworks messaging pour équipes sales (HPS).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                        <div style="width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;">✓</div>
+                        <div>
+                            <h4 style="margin: 0 0 var(--spacing-xs) 0; font-size: 1rem;">Campagnes Multicanales (Email, Paid, Content, Social)</h4>
+                            <p style="margin: 0; font-size: 0.9375rem; color: var(--text-secondary);">Fan4All : social ads (TikTok/IG), email nurture sequences, influencer ops avec A/B testing et optimization continue. Background agence : IKEA & LG campaigns 360 (OOH, TV, digital).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                        <div style="width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;">✓</div>
+                        <div>
+                            <h4 style="margin: 0 0 var(--spacing-xs) 0; font-size: 1rem;">Suivi & Optimisation KPIs</h4>
+                            <p style="margin: 0; font-size: 0.9375rem; color: var(--text-secondary);">Dashboards performance avec tracking UTM, attribution multitouch, cohorts analysis. Fan4All : +28% CTR après optimization, ROAS-lite monitoring, conversion funnels.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                        <div style="width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;">✓</div>
+                        <div>
+                            <h4 style="margin: 0 0 var(--spacing-xs) 0; font-size: 1rem;">Environnements B2B Complexes</h4>
+                            <p style="margin: 0; font-size: 0.9375rem; color: var(--text-secondary);">HPS : secteur payment tech hautement régulé (PCI-DSS, PSD2, EMVCo), stakeholder mapping C-level (CIO/CTO, CDO, Compliance), cycles de vente longs.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                        <div style="width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700;">✓</div>
+                        <div>
+                            <h4 style="margin: 0 0 var(--spacing-xs) 0; font-size: 1rem;">Collaboration Internationale (EMEA/APAC)</h4>
+                            <p style="margin: 0; font-size: 0.9375rem; color: var(--text-secondary);">HPS : contexte multi-régions (MENA, APAC, LATAM) avec adaptation réglementaire. IKEA : coordination globale-locale avec adaptation Maroc/Ramadan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results">
+        <div class="container">
+            <div class="eyebrow">Résultats Concrets</div>
+            <h2>Portfolio sélectionné — Tech & Campagnes</h2>
+            <p class="lead" style="margin-bottom: var(--spacing-xl); max-width: 700px;">
+                Deux cas principaux démontrant ma double expertise : stratégie produit/GTM et exécution de campagnes multicanales avec KPIs mesurables.
+            </p>
+            
+            <!-- Case Study 1: Fan4All -->
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="company-logo">F4A</div>
+                    <div class="case-meta">
+                        <span class="case-tag">Marketplace · SportTech</span>
+                        <h3>Fan4All — Creator-Led Growth Engine</h3>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Contexte</h4>
+                        <p>Plateforme connectant fans, clubs et marques via des produits sous licence. Besoin d'accélérer la croissance par les créateurs et de transformer le contenu en commerce mesurable à travers des campagnes multicanales.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Mon Rôle — Dual Track</h4>
+                        <p><strong>Communications stratégiques :</strong> Positioning, message house, architecture narrative (fans × clubs × marques), calendrier de lancements (drops, collabs, guides cadeaux).</p>
+                        <p style="margin-top: 0.5rem;"><strong>Content-to-Commerce & Campaign Execution :</strong> Conception et pilotage de campagnes multicanales (social ads TikTok/Instagram, email nurture sequences, influencer partnerships) avec optimisation continue des KPIs. Ops créateurs (onboarding, briefs, A/B testing créatifs), analytics et boucles d'apprentissage (SKU heatmaps, cohorts performance, attribution).</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Campagnes & Exécution Multicanale</h4>
+                        <ul class="feature-list">
+                            <li>Social ads : formats vidéo 9:16 & 1:1, hooks matchday, testing créatifs/CTAs, suivi ROI par cohorte</li>
+                            <li>Email marketing : séquences automatisées, segmentation affinité club/produit, optimization open rates</li>
+                            <li>Influencer ops : brief templates, affiliate tracking, UGC amplification, dashboards performance</li>
+                            <li>Paid media : optimisation budgets, A/B testing, dashboards ROAS-lite, conversion funnels</li>
+                            <li>Analytics : tracking UTM, attribution multitouch, SKU performance heatmaps, content cohorts</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">+28%</div>
+                        <div class="metric-label">CTR vidéo → Page produit</div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">+19%</div>
+                        <div class="metric-label">Conversion après trust cues</div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">300K€</div>
+                        <div class="metric-label">PR Value généré</div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: var(--spacing-lg); text-align: center;">
+                    <a href="https://sahelpub21-debug.github.io/Fanforall/" target="_blank" class="btn btn-secondary">
+                        Voir le projet complet
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Case Study 2: HPS -->
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="company-logo">HPS</div>
+                    <div class="case-meta">
+                        <span class="case-tag">B2B SaaS · Fintech</span>
+                        <h3>HPS — Brand & Market Intelligence (Payment Tech)</h3>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Contexte</h4>
+                        <p>Solution de paiement pour banques et retailers (PowerCARD platform). Mission freelance pour le Head of Product Marketing : audit marque/marché et recommandations stratégiques pour structurer l'inbound marketing et l'ABM dans un secteur hautement régulé. Projet récent (2025).</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Mon Rôle — Strategic Market Analysis</h4>
+                        <p><strong>Audit complet :</strong> Analyse de la position marché dans le secteur payment tech avec écosystème stakeholders complexe (CIO/CTO, CDO, Compliance, Operations). Mapping concurrentiel approfondi et identification des gaps de différenciation.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Recommandations stratégiques :</strong> Framework messaging multi-persona, stratégie éditoriale 90 jours avec ownership et KPIs, ABM framework par tier d'accounts, content operations et workflows d'approval.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Livrables Stratégiques</h4>
+                        <ul class="feature-list">
+                            <li>Stakeholder Mapping — 5 personas détaillées avec jobs-to-be-done, influence, besoins contenus</li>
+                            <li>Regulatory Landscape — PCI-DSS, PSD2, EMVCo, GDPR avec matrices de compliance</li>
+                            <li>Competitive Analysis — ACI, FIS/Worldpay, Temenos : forces, gaps, opportunités différenciation</li>
+                            <li>Messaging House — 3 piliers (Innovation, Reliability, Partnership) avec proof points par persona</li>
+                            <li>Editorial Strategy 90j — Thought Leadership, Solution Education, Decision Support avec formats et KPIs</li>
+                            <li>ABM Framework — Target accounts, personas prioritaires, proof points, séquences campagnes</li>
+                            <li>Content Operations — Workflows création, approval process, lead scoring, attribution multi-touch</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">5</div>
+                        <div class="metric-label">Personas B2B mappées</div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">90j</div>
+                        <div class="metric-label">Plan stratégique validé</div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">3</div>
+                        <div class="metric-label">Piliers éditoriaux définis</div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: var(--spacing-lg); text-align: center;">
+                    <a href="https://sahelpub21-debug.github.io/HPS/" target="_blank" class="btn btn-secondary">
+                        Voir le projet complet
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Secondary Cases Section -->
+            <div style="margin-top: var(--spacing-2xl);">
+                <h3 style="text-align: center; margin-bottom: var(--spacing-lg); color: var(--text-secondary); font-size: 1.25rem; font-weight: 600;">Autres Projets</h3>
+                
+                <div class="grid grid-3" style="gap: var(--spacing-md);">
+                    <!-- Glovo -->
+                    <div class="card" style="padding: var(--spacing-md);">
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                            <div class="company-logo" style="width: 40px; height: 40px; font-size: 1rem; background: #FFC244; color: #000;">G</div>
+                            <div>
+                                <span class="case-tag" style="font-size: 0.75rem; padding: 0.25rem 0.5rem;">Tech Platform · Delivery</span>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 1rem; margin-bottom: var(--spacing-xs);">Humans of Glovo</h4>
+                        <p style="font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: var(--spacing-md);">
+                            Série vidéo native (1.3M reach organique) pour humaniser la marque en période de crise. Strategic comms, production, community management.
+                        </p>
+                        <a href="https://sahelpub21-debug.github.io/Glovovideocontent/" target="_blank" style="font-size: 0.875rem; color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
+                            Voir le projet
+                            <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <!-- IKEA -->
+                    <div class="card" style="padding: var(--spacing-md);">
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                            <div class="company-logo" style="width: 40px; height: 40px; font-size: 1rem; background: #0051BA; color: white;">IK</div>
+                            <div>
+                                <span class="case-tag" style="font-size: 0.75rem; padding: 0.25rem 0.5rem;">Retail · B2C</span>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 1rem; margin-bottom: var(--spacing-xs);">Living With Children Morocco</h4>
+                        <p style="font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: var(--spacing-md);">
+                            Campagne 360 (OOH, TV, PR, digital). Account leadership, adaptation locale, coordination multi-équipes pendant Ramadan.
+                        </p>
+                        <a href="https://sahelpub21-debug.github.io/Ikea_LWC/" target="_blank" style="font-size: 0.875rem; color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
+                            Voir le projet
+                            <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <!-- LG -->
+                    <div class="card" style="padding: var(--spacing-md);">
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                            <div class="company-logo" style="width: 40px; height: 40px; font-size: 1rem; background: #A50034; color: white;">LG</div>
+                            <div>
+                                <span class="case-tag" style="font-size: 0.75rem; padding: 0.25rem 0.5rem;">Tech · Consumer</span>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 1rem; margin-bottom: var(--spacing-xs);">Smart TV Launch Morocco</h4>
+                        <p style="font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: var(--spacing-md);">
+                            Lancement webOS avec campagne 360 (OOH, TV, digital, street). Stratégie message "Complexité, dégage !", activation terrain.
+                        </p>
+                        <a href="https://sahelpub21-debug.github.io/LG_Smart_TV/" target="_blank" style="font-size: 0.875rem; color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
+                            Voir le projet
+                            <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section style="background: var(--bg-subtle);">
+        <div class="container">
+            <div class="eyebrow">Comment on travaille</div>
+            <h2>Un process clair, des résultats mesurables</h2>
+            
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h4>Audit & Diagnostic</h4>
+                    <p>Analyse du produit, du marché, des personas et du parcours actuel. Identification des frictions et opportunités.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h4>Stratégie & Messaging</h4>
+                    <p>Définition du positioning, message house par persona, plan GTM 90 jours avec KPIs clairs.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h4>Activation & Enablement</h4>
+                    <p>Création des assets (landing pages, briefs, talk tracks), formation des équipes, suivi des métriques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="cta-section">
+                <h2>Parlons de cette opportunité</h2>
+                <p class="lead" style="color: rgba(255,255,255,0.9);">
+                    Je suis enthousiaste à l'idée de contribuer à structurer le positioning produit et piloter des campagnes marketing pour vos solutions Data Intelligence & IA. Mon expérience B2B SaaS, marketplace tech et campaigns 360 correspond précisément à vos besoins.
+                </p>
+                <div class="cta-group" style="justify-content: center;">
+                    <a href="https://calendly.com/gallouch-zakaria/30-min-consultation" class="btn btn-primary" target="_blank">
+                        Réserver un échange
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/zakaria-gallouch" class="btn btn-secondary" target="_blank" style="background: white; color: var(--primary); border-color: rgba(255,255,255,0.3);">
+                        Message LinkedIn
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+                <p style="margin-top: var(--spacing-md); font-size: 0.875rem; opacity: 0.9;">
+                    <strong>À l'attention de Morgan Philips Group</strong> — Disponible pour un entretien à votre convenance
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/zakaria-gallouch" target="_blank" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+            </div>
+            <p style="color: var(--text-tertiary); font-size: 0.875rem; margin-bottom: 0.5rem;">
+                <a href="https://sahelpub21-debug.github.io/zakariagallouch/" target="_blank" style="color: var(--text-primary); text-decoration: none; font-weight: 700; transition: color 0.2s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-primary)'">Zakaria Gallouch</a> — Marketing Strategist · Tech & SaaS
+            </p>
+            <p style="color: var(--text-tertiary); font-size: 0.8125rem; margin-bottom: 0.25rem;">
+                Candidature ciblée : <strong>Product Marketing & Campaign Manager</strong>
+            </p>
+            <p style="color: var(--text-tertiary); font-size: 0.8125rem;">
+                Morgan Philips Group — Éditeur SaaS International · Data Intelligence & Market Intelligence
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
