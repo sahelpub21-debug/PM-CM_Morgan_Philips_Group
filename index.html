@@ -115,46 +115,9 @@
             }
         }
         
-        /* Header */
+        /* Header - Sticky Application Banner */
         header {
-            padding: var(--spacing-md) 0;
-            border-bottom: 1px solid var(--border);
-            background: rgba(255,255,255,0.8);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: var(--spacing-lg);
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9375rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
+            box-shadow: var(--shadow-sm);
         }
         
         /* Hero */
@@ -166,36 +129,6 @@
         .hero-content {
             position: relative;
             z-index: 2;
-        }
-        
-        .hero-header {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-lg);
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .profile-photo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid var(--border);
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 700;
-            color: white;
-            object-fit: cover;
-            cursor: pointer;
-        }
-        
-        .profile-photo:hover {
-            border-color: var(--primary);
-            transform: scale(1.05);
-            transition: all 0.2s;
         }
         
         .hero-badge {
@@ -603,18 +536,8 @@
         
         /* Responsive */
         @media (max-width: 767px) {
-            .nav-links {
-                display: none;
-            }
-            
             h1 {
                 font-size: 2rem;
-            }
-            
-            .profile-photo {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
             }
             
             .hero-stats {
@@ -653,6 +576,14 @@
             
             .grid-2 {
                 grid-template-columns: 1fr;
+            }
+            
+            header img {
+                height: 24px;
+            }
+            
+            header .container {
+                padding: 0.5rem var(--spacing-sm);
             }
         }
         
@@ -708,48 +639,32 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <a href="#" class="logo">ZG</a>
-            <ul class="nav-links">
-                <li><a href="#approach">Approche</a></li>
-                <li><a href="#results">Résultats</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Application Target Banner -->
-    <section style="background: linear-gradient(135deg, #f8f9fc 0%, #ffffff 100%); border-bottom: 2px solid var(--border); padding: var(--spacing-lg) 0;">
-        <div class="container">
-            <div style="display: flex; align-items: center; gap: var(--spacing-lg); flex-wrap: wrap;">
-                <!-- Placeholder for Morgan Philips logo - Replace with: <img src="morgan-philips-logo.png" alt="Morgan Philips" style="height: 40px;"> -->
-                <div style="padding: var(--spacing-sm) var(--spacing-lg); background: white; border: 2px dashed var(--border); border-radius: 8px; font-size: 0.875rem; color: var(--text-tertiary); font-weight: 600;">
-                    LOGO RECRUTEUR
-                </div>
-                <div style="flex: 1; min-width: 300px;">
-                    <div style="display: inline-block; padding: 0.25rem 0.75rem; background: var(--primary); color: white; border-radius: 4px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">
+    <!-- Sticky Application Banner -->
+    <header style="position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+        <div class="container" style="padding: var(--spacing-sm) var(--spacing-md);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-md); flex-wrap: wrap;">
+                <img src="https://i.imgur.com/zqCoi5c.png" alt="Morgan Philips" style="height: 32px;">
+                <div style="flex: 1; min-width: 200px;">
+                    <div style="display: inline-block; padding: 0.2rem 0.6rem; background: var(--primary); color: white; border-radius: 4px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.25rem;">
                         Candidature Ciblée
                     </div>
-                    <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin: 0 0 0.25rem 0; line-height: 1.3;">
-                        Product Marketing & Campaign Manager
-                    </h3>
-                    <p style="margin: 0; font-size: 0.9375rem; color: var(--text-secondary);">
-                        <strong>Morgan Philips Group</strong> — Éditeur SaaS International · Data Intelligence, IA & Market Intelligence · Casablanca
-                    </p>
+                    <div style="display: flex; align-items: center; gap: var(--spacing-sm); flex-wrap: wrap;">
+                        <a href="https://sahelpub21-debug.github.io/zakariagallouch/" target="_blank" style="font-size: 0.9375rem; font-weight: 700; color: var(--text-primary); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-primary)'">
+                            Zakaria Gallouch
+                        </a>
+                        <span style="color: var(--text-tertiary); font-size: 0.875rem;">→ Product Marketing & Campaign Manager</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="gradient-bg"></div>
         <div class="container hero-content animate-in">
             <div style="display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
-                <!-- Replace this with your actual photo: <img src="your-photo.jpg" alt="Zakaria Gallouch" style="width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--border); object-fit: cover;"> -->
-                <div class="profile-photo" title="Remplacer par votre photo" style="width: 80px; height: 80px; font-size: 2rem;">ZG</div>
+                <img src="https://i.imgur.com/pdPZqsG.png" alt="Zakaria Gallouch" style="width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--border); object-fit: cover;">
                 <div class="hero-badge" style="display: inline-flex;">
                     <span class="status-dot"></span>
                     Disponible pour nouveaux projets
@@ -757,17 +672,17 @@
             </div>
             
             <h1 style="margin-bottom: var(--spacing-md);">
-                Je transforme les produits tech complexes<br>
-                en <span class="gradient-text">stratégies marketing data-driven</span>
+                Marketing Strategist<br>
+                <span class="gradient-text">Tech & B2B SaaS</span>
             </h1>
             
             <p class="lead" style="margin: 0 0 var(--spacing-lg);">
-                Marketing strategist spécialisé tech & SaaS avec 10 ans d'expérience en positioning produit, pilotage de campagnes multicanales et activation B2B. Expertise en environnements complexes (fintech, marketplace, data-driven products) avec collaboration internationale EMEA/APAC.
+                10 ans d'expérience en positioning produit, pilotage de campagnes multicanales et activation B2B dans des environnements tech complexes (fintech, marketplace, SaaS). Collaboration internationale EMEA/APAC avec approche data-driven.
             </p>
             
             <div style="background: var(--bg-subtle); border-left: 4px solid var(--primary); padding: var(--spacing-md); border-radius: 8px; margin-bottom: var(--spacing-lg);">
                 <p style="margin: 0; font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6;">
-                    <strong>Pourquoi cette candidature :</strong> Votre besoin de structurer le positioning produit et piloter des campagnes marketing pour des solutions Data Intelligence & IA correspond parfaitement à mon expérience : audit stratégique B2B SaaS (HPS payment tech avec stakeholder mapping complexe), exécution de campagnes multicanales data-driven (Fan4All avec optimization continue et analytics avancées), et coordination multi-équipes sur des marchés internationaux.
+                    <strong>Fit avec le poste :</strong> Structuration du positioning produit pour solutions Data Intelligence & IA, exécution de campagnes marketing multicanales avec KPIs mesurables. Expérience confirmée en environnements B2B complexes (payment tech, marketplace, tech products) avec coordination multi-équipes sur marchés internationaux.
                 </p>
             </div>
             
@@ -976,7 +891,7 @@
             <div class="eyebrow">Résultats Concrets</div>
             <h2>Portfolio sélectionné — Tech & Campagnes</h2>
             <p class="lead" style="margin-bottom: var(--spacing-xl); max-width: 700px;">
-                Deux cas principaux démontrant ma double expertise : stratégie produit/GTM et exécution de campagnes multicanales avec KPIs mesurables.
+                Deux projets principaux démontrant la double expertise : structuration du positioning produit et exécution de campagnes multicanales 360 avec KPIs mesurables.
             </p>
             
             <!-- Case Study 1: Fan4All -->
@@ -996,7 +911,7 @@
                     </div>
                     
                     <div class="timeline-item">
-                        <h4>Mon Rôle — Dual Track</h4>
+                        <h4>Rôle — Dual Track</h4>
                         <p><strong>Communications stratégiques :</strong> Positioning, message house, architecture narrative (fans × clubs × marques), calendrier de lancements (drops, collabs, guides cadeaux).</p>
                         <p style="margin-top: 0.5rem;"><strong>Content-to-Commerce & Campaign Execution :</strong> Conception et pilotage de campagnes multicanales (social ads TikTok/Instagram, email nurture sequences, influencer partnerships) avec optimisation continue des KPIs. Ops créateurs (onboarding, briefs, A/B testing créatifs), analytics et boucles d'apprentissage (SKU heatmaps, cohorts performance, attribution).</p>
                     </div>
@@ -1047,68 +962,78 @@
                 </div>
             </div>
             
-            <!-- Case Study 2: HPS -->
+            <!-- Case Study 2: LG Electronics -->
             <div class="case-study">
                 <div class="case-header">
-                    <div class="company-logo">HPS</div>
+                    <div class="company-logo" style="background: #A50034; color: white;">LG</div>
                     <div class="case-meta">
-                        <span class="case-tag">B2B SaaS · Fintech</span>
-                        <h3>HPS — Brand & Market Intelligence (Payment Tech)</h3>
+                        <span class="case-tag">Tech · Consumer Electronics</span>
+                        <h3>LG Electronics — Smart TV webOS Launch (Campaign 360)</h3>
                     </div>
                 </div>
                 
                 <div class="timeline">
                     <div class="timeline-item">
                         <h4>Contexte</h4>
-                        <p>Solution de paiement pour banques et retailers (PowerCARD platform). Mission freelance pour le Head of Product Marketing : audit marque/marché et recommandations stratégiques pour structurer l'inbound marketing et l'ABM dans un secteur hautement régulé. Projet récent (2025).</p>
+                        <p>Lancement des Smart TV LG sous webOS au Maroc (2014). Dans un contexte post-révolutions arabes où le débat public est imprégné d'un lexique de contestation, les Smart TV existent mais l'expérience utilisateur reste perçue comme trop compliquée. Challenge : rendre tangible la simplicité de webOS pour le grand public et émerger rapidement en earned & paid media.</p>
                     </div>
                     
                     <div class="timeline-item">
-                        <h4>Mon Rôle — Strategic Market Analysis</h4>
-                        <p><strong>Audit complet :</strong> Analyse de la position marché dans le secteur payment tech avec écosystème stakeholders complexe (CIO/CTO, CDO, Compliance, Operations). Mapping concurrentiel approfondi et identification des gaps de différenciation.</p>
-                        <p style="margin-top: 0.5rem;"><strong>Recommandations stratégiques :</strong> Framework messaging multi-persona, stratégie éditoriale 90 jours avec ownership et KPIs, ABM framework par tier d'accounts, content operations et workflows d'approval.</p>
+                        <h4>Rôle — Campaign Lead & Strategy</h4>
+                        <p><strong>Stratégie & Direction :</strong> Lead stratégie message ("Simplicité" comme promesse unique), positionnement du slogan "Complexité, dégage !" comme métaphore d'une révolution utile, coordination 360° (digital/social, RP & presse, street marketing, OOH 4×3, achat presse).</p>
+                        <p style="margin-top: 0.5rem;"><strong>Exécution Multicanale :</strong> Orchestration des prestataires (créa, prod, média, terrain), gestion du teasing urbain sans marque puis reveal produit webOS, validation juridique et brand safety (référence culturelle sans récupération politique).</p>
                     </div>
                     
                     <div class="timeline-item">
-                        <h4>Livrables Stratégiques</h4>
+                        <h4>Activation 360° — Canaux & Exécution</h4>
                         <ul class="feature-list">
-                            <li>Stakeholder Mapping — 5 personas détaillées avec jobs-to-be-done, influence, besoins contenus</li>
-                            <li>Regulatory Landscape — PCI-DSS, PSD2, EMVCo, GDPR avec matrices de compliance</li>
-                            <li>Competitive Analysis — ACI, FIS/Worldpay, Temenos : forces, gaps, opportunités différenciation</li>
-                            <li>Messaging House — 3 piliers (Innovation, Reliability, Partnership) avec proof points par persona</li>
-                            <li>Editorial Strategy 90j — Thought Leadership, Solution Education, Decision Support avec formats et KPIs</li>
-                            <li>ABM Framework — Target accounts, personas prioritaires, proof points, séquences campagnes</li>
-                            <li>Content Operations — Workflows création, approval process, lead scoring, attribution multi-touch</li>
+                            <li>Teasing urbain : affichage et activations terrain autour du slogan, pré-révélation sans marque</li>
+                            <li>Digital & Social : séquences snack (how-to), formats carrousel, UGC "avant/après" simplicité</li>
+                            <li>Relations Presse : media kit, sessions démo, tribunes "simplicité utile"</li>
+                            <li>OOH 4×3 & Presse : couverture à forte répétition sur axes premium + insertions presse ciblées</li>
+                            <li>Street marketing : démos mobiles, distribution de cheat-sheets webOS, collecte feedback</li>
+                            <li>Reveal produit : webOS en démonstration avec vidéos courtes et landing explicative</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Livrables Clés</h4>
+                        <ul class="feature-list">
+                            <li>Message house "Simplicité utile" avec brand safety guidelines</li>
+                            <li>Kit RP complet (communiqué, visuels, Q&A, démo webOS)</li>
+                            <li>Assets digitaux modulaires (vidéos courtes, carrousels, bannières)</li>
+                            <li>Toolkit terrain (cheat-sheets, scripts d'animation, feedback form)</li>
+                            <li>Plan média 360 avec répartition budgétaire OOH/Presse/Digital/Terrain</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="metrics">
                     <div class="metric">
-                        <div class="metric-value">5</div>
-                        <div class="metric-label">Personas B2B mappées</div>
+                        <div class="metric-value">360°</div>
+                        <div class="metric-label">Campaign (OOH, TV, Digital, Terrain)</div>
                         <div class="metric-bar">
                             <div class="metric-fill" style="width: 100%;"></div>
                         </div>
                     </div>
                     <div class="metric">
-                        <div class="metric-value">90j</div>
-                        <div class="metric-label">Plan stratégique validé</div>
+                        <div class="metric-value">Multi</div>
+                        <div class="metric-label">Prestataires coordonnés</div>
                         <div class="metric-bar">
-                            <div class="metric-fill" style="width: 100%;"></div>
+                            <div class="metric-fill" style="width: 90%;"></div>
                         </div>
                     </div>
                     <div class="metric">
-                        <div class="metric-value">3</div>
-                        <div class="metric-label">Piliers éditoriaux définis</div>
+                        <div class="metric-value">Launch</div>
+                        <div class="metric-label">Produit tech complexe simplifié</div>
                         <div class="metric-bar">
-                            <div class="metric-fill" style="width: 100%;"></div>
+                            <div class="metric-fill" style="width: 95%;"></div>
                         </div>
                     </div>
                 </div>
                 
                 <div style="margin-top: var(--spacing-lg); text-align: center;">
-                    <a href="https://sahelpub21-debug.github.io/HPS/" target="_blank" class="btn btn-secondary">
+                    <a href="https://sahelpub21-debug.github.io/LG_Smart_TV/" target="_blank" class="btn btn-secondary">
                         Voir le projet complet
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -1122,6 +1047,26 @@
                 <h3 style="text-align: center; margin-bottom: var(--spacing-lg); color: var(--text-secondary); font-size: 1.25rem; font-weight: 600;">Autres Projets</h3>
                 
                 <div class="grid grid-3" style="gap: var(--spacing-md);">
+                    <!-- HPS -->
+                    <div class="card" style="padding: var(--spacing-md);">
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                            <div class="company-logo" style="width: 40px; height: 40px; font-size: 1rem;">HPS</div>
+                            <div>
+                                <span class="case-tag" style="font-size: 0.75rem; padding: 0.25rem 0.5rem;">B2B SaaS · Fintech</span>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 1rem; margin-bottom: var(--spacing-xs);">Brand & Market Intelligence</h4>
+                        <p style="font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: var(--spacing-md);">
+                            Audit marque/marché pour éditeur payment tech. Stakeholder mapping 5 personas, competitive analysis, messaging house et stratégie éditoriale 90j.
+                        </p>
+                        <a href="https://sahelpub21-debug.github.io/HPS/" target="_blank" style="font-size: 0.875rem; color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
+                            Voir le projet
+                            <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
                     <!-- Glovo -->
                     <div class="card" style="padding: var(--spacing-md);">
                         <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
@@ -1135,26 +1080,6 @@
                             Série vidéo native (1.3M reach organique) pour humaniser la marque en période de crise. Strategic comms, production, community management.
                         </p>
                         <a href="https://yti.my.canva.site/glovo-ikea" target="_blank" style="font-size: 0.875rem; color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
-                            Voir le projet
-                            <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                                <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                    </div>
-
-                <!-- LG -->
-                    <div class="card" style="padding: var(--spacing-md);">
-                        <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
-                            <div class="company-logo" style="width: 40px; height: 40px; font-size: 1rem; background: #A50034; color: white;">LG</div>
-                            <div>
-                                <span class="case-tag" style="font-size: 0.75rem; padding: 0.25rem 0.5rem;">Tech · Consumer</span>
-                            </div>
-                        </div>
-                        <h4 style="font-size: 1rem; margin-bottom: var(--spacing-xs);">Smart TV Launch Morocco</h4>
-                        <p style="font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: var(--spacing-md);">
-                            Lancement webOS avec campagne 360 (OOH, TV, digital, street). Stratégie message "Complexité, dégage !", activation terrain.
-                        </p>
-                        <a href="https://sahelpub21-debug.github.io/LG_Smart_TV/" target="_blank" style="font-size: 0.875rem; color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
                             Voir le projet
                             <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
                                 <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -1181,7 +1106,7 @@
                             </svg>
                         </a>
                     </div>
-                                    </div>
+                </div>
             </div>
         </div>
     </section>
